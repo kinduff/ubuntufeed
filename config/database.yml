@@ -1,0 +1,26 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: ubuntufeed_development
+  pool: 5
+  username: postgres
+  password: 123
+
+test:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: ubuntufeed_test
+  pool: 5
+  username: postgres
+  password: 123
+
+production:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: ubuntufeed_production
+  pool: 5
+  username: postgres
+  password: 123
