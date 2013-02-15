@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
     t.string   "link"
     t.datetime "pubdate"
     t.text     "description"
+    t.integer  "blog_id"
   end
 
 end

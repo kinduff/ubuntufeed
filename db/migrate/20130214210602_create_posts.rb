@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :link
       t.timestamp :pubdate
       t.text :description
+      t.integer :blog_id
     end
   end
 end
