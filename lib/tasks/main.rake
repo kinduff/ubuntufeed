@@ -69,3 +69,24 @@ namespace :blogsinfo  do
     end
   end
 end
+
+namespace :update do
+  desc "Update blogs"
+  task :posts => :environment do
+    feeds_urls = []
+    Blog.all.each do |blog|
+      feeds_urls << blog.feed_url
+    end
+    feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
+    feeds.each do |feed_url, feed|
+      feed.entries.each do |entry|
+        title = entry.title
+        link = entry.url
+        unless entry.summary.nil?
+          description = entry.summary.sanitize[0..140]
+        end
+        pubdate = entry.published
+      end
+    end
+  end
+end

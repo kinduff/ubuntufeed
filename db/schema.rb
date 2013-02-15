@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.string   "link"
-    t.string   "comments"
     t.datetime "pubdate"
     t.text     "description"
   end
