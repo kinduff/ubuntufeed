@@ -5,11 +5,21 @@ feeds_urls = ["http://www.comoinstalarlinux.com/feed/", "http://www.atareao.es/f
 namespace :blogsinfo  do
   desc "Gets blogs info"
   task :get => :environment do
+    blogs = []
     feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
     feeds.each do |feed_url, feed|
-      puts feed.title
-      puts feed.url
-      puts feed_url
+      blogs << {
+        :title => feed.title,
+        :url => feed.url,
+        :feed_url => feed_url
+      }
+    end
+    if (Blog.create(blogs))
+      puts "Success!"
+      puts "Array: #{blogs.count}"
+      puts "Database: #{Blog.count}"
+    else
+      puts "Something went wrong"
     end
   end
 end
