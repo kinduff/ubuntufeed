@@ -8,11 +8,13 @@ namespace :blogsinfo  do
     blogs = []
     feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
     feeds.each do |feed_url, feed|
-      blogs << {
-        :title => feed.title,
-        :url => feed.url,
-        :feed_url => feed_url
-      }
+      unless Blog.where(:feed_url => feed_url)
+        blogs << {
+          :title => feed.title,
+          :url => feed.url,
+          :feed_url => feed_url
+        }
+      end
     end
     if (Blog.create(blogs))
       puts "Success!"
