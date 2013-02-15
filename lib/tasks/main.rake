@@ -22,4 +22,12 @@ namespace :blogsinfo  do
       puts "Something went wrong"
     end
   end
+  task :show => :environment do
+    Blog.all.each do |blog|
+      puts blog.title
+      puts blog.url
+      puts blog.feed_url
+      puts "========="
+    end
+  end
 end
