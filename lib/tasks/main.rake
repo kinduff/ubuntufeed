@@ -44,7 +44,7 @@ namespace :blogsinfo  do
     blogs = []
     feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
     feeds.each do |feed_url, feed|
-      unless Blog.where(:feed_url => feed_url)
+      if Blog.where(:feed_url => feed_url).count == 0
         blogs << {
           :title => feed.title,
           :url => feed.url,
