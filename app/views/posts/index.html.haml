@@ -1,0 +1,5 @@
+%ul
+  - @entradas.each do |r|
+    %li
+      = "#{r.blog.title}"
+      = link_to r.title, r.link
