@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
+    t.string   "slug"
     t.string   "url"
     t.string   "feed_url"
     t.text     "description"
