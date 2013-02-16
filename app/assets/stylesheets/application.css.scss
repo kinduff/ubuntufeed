@@ -1,3 +1,27 @@
 //= require normalize
 //= require_self
 //= require_tree .
+body {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAMAAACeL25MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////zsrFFOhhzwAAAA9JREFUeNpiYGTAAAABBgAAJwAC/BnsgQAAAABJRU5ErkJggg==');
+}
+.contenedor {
+  width: 960px;
+  height: auto;
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  height: 72px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAABICAIAAAC81dhHAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oDBBQGGZ6tfIQAAAEJSURBVCjP7dBdM0JRFIfxZ/+PXgiNGiK9GQYxfCAfO+PlGEaRlzTVdIiKvbeLk/s+gHXz/GbW1VpmcFYHAClfnsn1HoGgdqo4ttlQHEBx5ttWT2yzoaB6bFvngGzrAggqRwKCct0+XCooHdrHK0C2fQ0EpQMB2t637VAq7rmnG0Du+RbQ1q4AFXbcy520UXOde0DurQlovSJA+bLrPki5YnyKXP8Z0NqmAJMtuMGrzOq6H3YA+agLmJW8AJPJ+feezFLWj/qA/OcQMIurAkx62X9FMqmMH38A8pMRYJJpASRSfjoWC0m+J4D4mQIECQFoAfstTID7AYS3s4/zN/+aXyYMw5miKIr1C9QlcWHtLpGtAAAAAElFTkSuQmCC');
+  h1 {
+    line-height: 72px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+article {
+  background: white;
+  padding: 20px;
+}

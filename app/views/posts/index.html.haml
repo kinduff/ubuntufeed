@@ -1,7 +1,6 @@
-%ul
+%article
   - @entradas.each do |r|
-    %li
-      = "#{r.blog.title}"
+    %p
       = link_to r.title, r.link
       
 = paginate @entradas

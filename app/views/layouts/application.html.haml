@@ -2,8 +2,22 @@
 %html
   %head
     %title Ubuntufeed
+    %meta{ :charset => "utf-8" }
+    %meta{ :'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    %meta{ :content => "", :name => "description" }
+    %meta{ :content => "", :name => "author" }
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body
-    = yield
+    %header
+      .contenedor
+        %h1
+          =link_to "UbuntuFeed", root_path
+        %nav
+    %section
+      .contenedor
+        = yield
+    %aside
+    %footer
+      .contenedor
     = javascript_include_tag "application"
