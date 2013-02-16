@@ -41,8 +41,10 @@ feeds_urls = [
 namespace :blogsinfo  do
   desc "Gets blogs info"
   task :get => :environment do
+    puts "Working..."
     blogs = []
     feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
+    puts "Looping through feed url's array..."
     feeds.each do |feed_url, feed|
       if Blog.where(:feed_url => feed_url).count == 0
         blogs << {
@@ -50,8 +52,10 @@ namespace :blogsinfo  do
           :url => feed.url,
           :feed_url => feed_url
         }
+        puts "\"#{feed.title}\" in array"
       end
     end
+    puts "Saving..."
     if (Blog.create(blogs))
       puts "Success!"
       puts "Array: #{blogs.count}"
@@ -61,32 +65,61 @@ namespace :blogsinfo  do
     end
   end
   task :show => :environment do
+    puts "Working..."
     Blog.all.each do |blog|
       puts blog.title
       puts blog.url
       puts blog.feed_url
       puts "========="
+      puts " "
     end
+    puts "Done!"
   end
 end
 
 namespace :update do
   desc "Update blogs"
   task :posts => :environment do
+    puts "Working..."
     feeds_urls = []
+    posts = []
     Blog.all.each do |blog|
       feeds_urls << blog.feed_url
     end
     feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
     feeds.each do |feed_url, feed|
+      puts " "
+      puts "=========================================="
+      puts "Looping through \"#{feed.title}\" entries."
+      puts "=========================================="
+      puts " "
       feed.entries.each do |entry|
-        title = entry.title
-        link = entry.url
-        unless entry.summary.nil?
-          description = entry.summary.sanitize[0..140]
+        if Post.where(:link => entry.url).count == 0
+          title = entry.title
+          link = entry.url
+          unless entry.summary.nil?
+            description = entry.summary.sanitize[0..140]
+          end
+          pubdate = entry.published
+          blog_id = Blog.find_by_feed_url(feed_url).id
+          posts << {
+            :title => title,
+            :link => link,
+            :description => description,
+            :pubdate => pubdate,
+            :blog_id => blog_id
+          }
+          puts "\"#{title}\" in array."
         end
-        pubdate = entry.published
       end
+    end
+    puts "Done."
+    puts "Saving..."
+    if (Post.create(posts))
+      puts "Success!"
+      puts "Saved: #{posts.count}"
+    else
+      puts "Something went wrong"
     end
   end
 end
