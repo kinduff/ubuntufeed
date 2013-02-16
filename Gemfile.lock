@@ -88,6 +88,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.7)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.11.8.13)
     listen (0.7.2)
     loofah (1.0.0)
@@ -183,6 +186,7 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  kaminari
   meta_request
   paperclip
   pg
