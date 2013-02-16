@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
+    t.string   "slug"
     t.string   "link"
     t.datetime "pubdate"
     t.text     "description"
