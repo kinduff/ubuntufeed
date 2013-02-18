@@ -6,6 +6,7 @@
     %meta{ :'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
     %meta{ :content => "", :name => "description" }
     %meta{ :content => "", :name => "author" }
+    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body
@@ -14,14 +15,15 @@
         .logo
         %h1
           =link_to "UbuntuFeed", root_path
-        %nav
-          %ul
-            %li
-              +
-            %li
-              ?
-            %li
-              = paginate @posts
+        -unless request.fullpath == '/about'
+          %nav
+            %ul
+              %li
+                +
+              %li
+                = link_to "?", about_path
+              %li
+                = paginate @posts
 
     = yield
     %aside

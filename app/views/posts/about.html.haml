@@ -1,0 +1,15 @@
+.contenedor
+  #about
+    %h1 Acerca de
+    %p Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español.
+    %p Surge a partir de la necesidad de juntar y ordenar feeds de blogs relacionados a Ubuntu y Linux para el fácil acceso a noticias.
+    %p
+      Proyecto realizado por
+      %a{:href => "http://twitter.com/kinduff", :target => 'blank'} @kinduff
+      en Ruby on Rails; código de fuente disponible en
+      %a{:href => "http://github.com/kinduff/ubuntufeed", :target => 'blank'} Github
+    %h2 Listado de feeds
+    %ul
+      - @blogs.each do |blog|
+        %li
+          =link_to blog.title, blog.url, :target => 'blank'

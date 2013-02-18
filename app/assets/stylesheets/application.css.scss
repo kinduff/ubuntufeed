@@ -3,9 +3,20 @@
 //= require_tree .
 @import url('http://fonts.googleapis.com/css?family=Ubuntu:400,700');
 
+::selection {
+  background: #FF8A4B; /* Safari */
+  }
+::-moz-selection {
+  background: #FF8A4B; /* Firefox */
+}
+
 body {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAMAAACeL25MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////zsrFFOhhzwAAAA9JREFUeNpiYGTAAAABBgAAJwAC/BnsgQAAAABJRU5ErkJggg==');
   font-family: 'Ubuntu';
+  color: #333;
+}
+a {
+  color: #EF5A29;
 }
 .contenedor {
   width: 100%;
@@ -103,5 +114,22 @@ nav {
 
       }
     }
+  }
+}
+#about {
+  padding: 100px 25px 25px 25px;
+  height: 100%;
+  background: white;
+  h1, h2 {
+    color: #EF5A29;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  h2 {
+    margin-top: 25px;
+  }
+  ul {
+    margin-left: 20px;
   }
 }

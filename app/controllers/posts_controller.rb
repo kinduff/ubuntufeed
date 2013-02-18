@@ -3,4 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.order('pubdate DESC').page params[:page]
     @number = params[:page]
   end
+  def about
+    @blogs = Blog.all
+  end
 end
