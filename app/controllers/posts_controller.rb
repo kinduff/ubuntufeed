@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @entradas = Post.order('pubdate DESC').page params[:page]
+    @posts = Post.order('pubdate DESC').page params[:page]
+    @number = params[:page]
   end
 end

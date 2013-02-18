@@ -1,6 +1,4 @@
-- @entradas.each do |r|
-  %article
-    %p
-      = link_to r.title, r.link, :target => 'blank'
-      
-= paginate @entradas
+%section
+  .contenedor
+    .page
+      = render @posts

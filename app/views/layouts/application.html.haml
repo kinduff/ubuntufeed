@@ -11,13 +11,26 @@
   %body
     %header
       .contenedor
+        .logo
         %h1
           =link_to "UbuntuFeed", root_path
         %nav
-    %section
-      .contenedor
-        = yield
+          %ul
+            %li
+              +
+            %li
+              ?
+            %li
+              = paginate @posts
+
+    = yield
     %aside
     %footer
       .contenedor
     = javascript_include_tag "application"
+    :javascript
+      if ($(".prev").length > 0){
+        $(".prev").after("#{params[:page]}")
+      } else {
+        $(".next").before("< 1")
+      }
