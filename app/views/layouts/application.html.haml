@@ -15,11 +15,11 @@
         .logo
         %h1
           =link_to "UbuntuFeed", root_path
-        -unless request.fullpath == '/about'
+        -if request.fullpath == '/'
           %nav
             %ul
               %li
-                +
+                = link_to "+", enviar_path
               %li
                 = link_to "?", about_path
               %li

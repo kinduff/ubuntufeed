@@ -13,3 +13,6 @@
       - @blogs.each do |blog|
         %li
           =link_to blog.title, blog.url, :target => 'blank'
+    %p
+      ¿Tienes algún blog que no aparece en esta lista?
+      =link_to 'Envía un blog', enviar_path

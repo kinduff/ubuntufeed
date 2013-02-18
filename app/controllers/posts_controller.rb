@@ -6,4 +6,7 @@ class PostsController < ApplicationController
   def about
     @blogs = Blog.all
   end
+  def enviar
+    
+  end
 end
