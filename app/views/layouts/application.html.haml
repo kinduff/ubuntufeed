@@ -15,7 +15,7 @@
         .logo
         %h1
           =link_to "UbuntuFeed", root_path
-        -if request.fullpath == '/'
+        -unless request.fullpath == '/about' || request.fullpath == '/enviar'
           %nav
             %ul
               %li
