@@ -35,7 +35,8 @@ feeds_urls = [
 "http://ubuntutoday.com/feed/",
 "http://portallinux.es/feed/",
 "http://unawebmaslibre.blogspot.com/feeds/posts/default",
-"http://feeds.feedburner.com/UsemosLinux?format=xml"
+"http://feeds.feedburner.com/UsemosLinux?format=xml",
+"http://feeds.feedburner.com/UbuntizandoElPlaneta?format=xml"
 ]
 
 namespace :blogsinfo  do
