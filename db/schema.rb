@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
     t.string   "url"
     t.string   "feed_url"
     t.text     "description"
+    t.boolean  "visible",           :default => false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
@@ -32,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
     t.datetime "pubdate"
     t.text     "description"
     t.integer  "blog_id"
-    t.boolean  "visible",     :default => false
   end
 
 end

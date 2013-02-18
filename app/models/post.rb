@@ -7,7 +7,4 @@ class Post < ActiveRecord::Base
       self.slug = self.title.parameterize
     end
   end
-  def self.visibles
-    self.where :visible => true
-  end
 end

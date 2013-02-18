@@ -6,6 +6,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string :url
       t.string :feed_url
       t.text :description
+      t.boolean :visible, :default => false
     end
   end
 end
