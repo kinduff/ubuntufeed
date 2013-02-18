@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.timestamp :pubdate
       t.text :description
       t.integer :blog_id
+      t.boolean :visible, :default => false
     end
   end
 end

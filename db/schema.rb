@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
     t.datetime "pubdate"
     t.text     "description"
     t.integer  "blog_id"
+    t.boolean  "visible",     :default => false
   end
 
 end

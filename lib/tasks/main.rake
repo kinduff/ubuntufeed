@@ -51,7 +51,8 @@ namespace :blogsinfo  do
         blogs << {
           :title => feed.title,
           :url => feed.url,
-          :feed_url => feed_url
+          :feed_url => feed_url,
+          :visible => true
         }
         puts "\"#{feed.title}\" in array"
       end
@@ -71,6 +72,7 @@ namespace :blogsinfo  do
       puts blog.title
       puts blog.url
       puts blog.feed_url
+      puts blog.visible
       puts "========="
       puts " "
     end
