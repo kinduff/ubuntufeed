@@ -24,7 +24,15 @@
                 = link_to "?", about_path
               %li
                 = paginate @posts
-
+        -else
+          %nav
+            %ul
+              %li
+                = link_to "+", enviar_path
+              %li
+                = link_to "?", about_path
+              %li
+                = link_to "< 0 >", root_path
     = yield
     %aside
     %footer
