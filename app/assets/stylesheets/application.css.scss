@@ -134,3 +134,31 @@ nav {
     margin-bottom: 10px;
   }
 }
+#enviar {
+  padding: 100px 25px 25px 25px;
+  height: 100%;
+  background: white;
+  h2 {
+    color: #EF5A29;
+    margin-bottom: 15px;
+  }
+  label {
+    display: block;
+  }
+  input {
+    margin-bottom: 15px;
+    width: 300px;
+    border: 1px solid #f2f2f2;
+    padding: 7px;
+  }
+  input[type=submit] {
+    width: 150px;
+    padding: 10px;
+    background: #EF5A29;
+    font-weight: bold;
+    color: white;
+  }
+}
+.error {
+  color: red;
+}
