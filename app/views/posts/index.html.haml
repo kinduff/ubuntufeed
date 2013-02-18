@@ -1,6 +1,6 @@
-%article
-  - @entradas.each do |r|
+- @entradas.each do |r|
+  %article
     %p
-      = link_to r.title, r.link
+      = link_to r.title, r.link, :target => 'blank'
       
-= paginate @entradas
+= paginate @entradas,:window => 5, :outer_window => -1

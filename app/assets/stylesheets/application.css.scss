@@ -1,8 +1,11 @@
 //= require normalize
 //= require_self
 //= require_tree .
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:400,700');
+
 body {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAMAAACeL25MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////zsrFFOhhzwAAAA9JREFUeNpiYGTAAAABBgAAJwAC/BnsgQAAAABJRU5ErkJggg==');
+  font-family: 'Ubuntu';
 }
 .contenedor {
   width: 960px;
@@ -12,7 +15,10 @@ body {
 header {
   width: 100%;
   height: 72px;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAABICAIAAAC81dhHAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oDBBQGGZ6tfIQAAAEJSURBVCjP7dBdM0JRFIfxZ/+PXgiNGiK9GQYxfCAfO+PlGEaRlzTVdIiKvbeLk/s+gHXz/GbW1VpmcFYHAClfnsn1HoGgdqo4ttlQHEBx5ttWT2yzoaB6bFvngGzrAggqRwKCct0+XCooHdrHK0C2fQ0EpQMB2t637VAq7rmnG0Du+RbQ1q4AFXbcy520UXOde0DurQlovSJA+bLrPki5YnyKXP8Z0NqmAJMtuMGrzOq6H3YA+agLmJW8AJPJ+feezFLWj/qA/OcQMIurAkx62X9FMqmMH38A8pMRYJJpASRSfjoWC0m+J4D4mQIECQFoAfstTID7AYS3s4/zN/+aXyYMw5miKIr1C9QlcWHtLpGtAAAAAElFTkSuQmCC');
+  background: image-url('bg.png');
+  -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 1px 5px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 1px 5px rgba(50, 50, 50, 0.75);
   h1 {
     line-height: 72px;
     a {
@@ -22,6 +28,23 @@ header {
   }
 }
 article {
-  background: white;
-  padding: 20px;
+  background: #333333;
+  height: 50px;
+  position: relative;
+  &:nth-child(even) {
+    background: #AEA79F;
+  }
+  p {
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    padding-left: 15px;
+    a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
