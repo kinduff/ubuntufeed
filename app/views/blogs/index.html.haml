@@ -10,9 +10,7 @@
       %a{:href => "http://github.com/kinduff/ubuntufeed", :target => 'blank'} Github
     %h2 Listado de feeds
     %ul
-      - @blogs.each do |blog|
-        %li
-          =link_to blog.title, blog.url, :target => 'blank'
+      = render @blogs
     %p
       ¿Tienes algún blog que no aparece en esta lista?
       =link_to 'Envía un blog', enviar_path
