@@ -29,7 +29,7 @@
               -if @posts
                 = paginate @posts
               -else
-                < 0 >
+                =link_to "< 0 >", root_path
     = yield
     %aside
     %footer
