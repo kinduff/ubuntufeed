@@ -195,5 +195,10 @@ es:
     errors:
       <<: *errors
   activerecord:
+    attributes:
+      blog:
+        title: Titulo del blog
+        url: URL del sitio
+        feed_url: Feed del sitio (RSS, Feedburner, Atom)
     errors:
       <<: *errors
