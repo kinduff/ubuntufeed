@@ -54,6 +54,11 @@ header {
 section {
   padding-top: 72px;
 }
+.shadow {
+  -webkit-box-shadow: 0px 0px 5px black;
+  -moz-box-shadow:    0px 0px 5px black;
+  box-shadow:         0px 0px 5px black;
+}
 article {
   position: relative;
   background: #232323;
