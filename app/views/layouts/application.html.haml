@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Ubuntufeed
+    %title UbuntuFeed | Noticias de Ubuntu en español
     %meta{ :charset => "utf-8" }
     %meta{ :'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
     %meta{ :content => 'width=device-width', :name => 'viewport' }
@@ -16,24 +16,17 @@
         .logo
         %h1
           =link_to "UbuntuFeed", root_path
-        -unless request.fullpath == '/about' || request.fullpath == '/enviar'
-          %nav
-            %ul
-              %li
-                = link_to "+", enviar_path
-              %li
-                = link_to "?", about_path
-              %li
+        %nav
+          %ul
+            %li
+              = link_to "+", enviar_path
+            %li
+              = link_to "?", about_path
+            %li
+              -if @posts
                 = paginate @posts
-        -else
-          %nav
-            %ul
-              %li
-                = link_to "+", enviar_path
-              %li
-                = link_to "?", about_path
-              %li
-                = link_to "< 0 >", root_path
+              -else
+                < 0 >
     = yield
     %aside
     %footer
