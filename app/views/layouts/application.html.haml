@@ -10,6 +10,7 @@
     %meta{ :content => "Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español.", :property => "og:description"}
     %meta{ :content => "http://ubuntufeed.herokuapp.com/logo.png", :property => "og:image"}
     %link{ :href => "favicon.ico", :rel => "shortcut icon"}
+    = auto_discovery_link_tag(:rss, "http://ubuntufeed.herokuapp.com/")
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body

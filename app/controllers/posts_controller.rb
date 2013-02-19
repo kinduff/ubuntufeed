@@ -18,4 +18,7 @@ class PostsController < ApplicationController
       render :enviar
     end
   end
+  def feed
+    @posts = Post.order('pubdate DESC').page params[:page]
+  end
 end
