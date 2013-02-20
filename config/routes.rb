@@ -8,4 +8,5 @@ Ubuntufeed::Application.routes.draw do
 
   resources :posts
   resources :blogs
+  resources :admin
 end
