@@ -8,9 +8,10 @@
     %meta{ :content => "Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español.", :name => "description" }
     %meta{ :content => "UbuntuFeed | Noticias de Ubuntu en español", :property => "og:title"}
     %meta{ :content => "Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español.", :property => "og:description"}
-    %meta{ :content => "http://ubuntufeed.herokuapp.com/logo.png", :property => "og:image"}
+    %meta{ :content => "http://ubuntufeed.co/logo.png", :property => "og:image"}
+    %meta{ :content => "http://ubuntufeed.co", :property => 'og:url' }
     %link{ :href => "favicon.ico", :rel => "shortcut icon"}
-    = auto_discovery_link_tag(:rss, "http://ubuntufeed.herokuapp.com/")
+    = auto_discovery_link_tag(:rss, "http://ubuntufeed.co")
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body

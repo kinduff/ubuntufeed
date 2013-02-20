@@ -3,7 +3,7 @@ xml.rss :version => "2.0" do
   xml.channel do
     xml.title "UbuntuFeed"
     xml.description "Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español."
-    xml.link "http://ubuntufeed.herokuapp.com"
+    xml.link "http://ubuntufeed.co"
 
     for post in @posts
       xml.item do

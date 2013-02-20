@@ -6,7 +6,7 @@ Surge a partir de la necesidad de juntar y ordenar feeds de blogs relacionados a
 
 Proyecto realizado por [@kinduff](http://twitter.com/kinduff) en Ruby on Rails; código de fuente disponible en [Github](http://github.com/kinduff/ubuntufeed)
 
-[Visitar web del proyecto](http://ubuntufeed.herokuapp.com/)
+[Visitar web del proyecto](http://ubuntufeed.co)
 [Entrada al blog](http://abarcarodriguez.com/blog/ubuntufeed-noticias-de-ubuntu-para-todos)
 
 ## Actualizar
