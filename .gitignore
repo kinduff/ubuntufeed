@@ -16,3 +16,6 @@
 
 *~
 /config/initializers/_env.rb
+
+# Vim temporal viles
+*.swp

@@ -9,6 +9,8 @@ gem 'feedzirra'
 gem 'paperclip'
 gem 'kaminari'
 gem 'simple_form'
+gem 'underscore-rails'
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
