@@ -12,12 +12,12 @@ Proyecto realizado por [@kinduff](http://twitter.com/kinduff) en Ruby on Rails; 
 ## Actualizar
 Tomamos array de blogs en `lib/tasks/main.rake`. Para llenar db:
 
-    rake blogsinfo:get
+    rake blogs:get
 
 
 Mostrar los blogs:
 
-    rake blogsinfo:show
+    rake blogs:show
 
 
 Loopear a través de blogs en db y actualizar posts:

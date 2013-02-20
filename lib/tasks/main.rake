@@ -39,7 +39,7 @@ feeds_urls = [
 "http://feeds.feedburner.com/UbuntizandoElPlaneta?format=xml"
 ]
 
-namespace :blogsinfo  do
+namespace :blogs  do
   desc "Gets blogs info"
   task :get => :environment do
     puts "Working..."
