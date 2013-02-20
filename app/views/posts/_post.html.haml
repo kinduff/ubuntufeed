@@ -1,5 +1,5 @@
 %article
-  %p.fecha{:class => "c#{Time.at(post.pubdate).day}#{Time.at(post.pubdate).day}" }
-    = I18n.localize(Time.at(post.pubdate), :format => '%A, %d de %B de %Y' )
+  %p.fecha{:data => { :date => post.date_string } }
+    = post.date
   %p
     = link_to post.title[0..115], post.link, :target => 'blank'

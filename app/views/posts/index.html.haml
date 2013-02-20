@@ -1,3 +1,5 @@
 %section
   .contenedor.shadow
-    = render @posts
+    .posts_container
+      = render @posts
+    = link_to "Cargar Mas", "#cargar_mas", {class: 'load_more'}
