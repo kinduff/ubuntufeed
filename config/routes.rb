@@ -6,6 +6,9 @@ Ubuntufeed::Application.routes.draw do
   get 'about', :to => 'blogs#index', :as => 'about'
   get 'enviar', :to => 'blogs#new', :as => 'enviar'
 
+  get 'mostrar/:id', :to => 'admin#mostrar', :as => 'mostrar'
+  get 'ocultar/:id', :to => 'admin#ocultar', :as => 'ocultar'
+
   resources :posts
   resources :blogs
   resources :admin

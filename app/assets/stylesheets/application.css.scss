@@ -221,3 +221,27 @@ nav {
     margin-top: 10px;
   }
 }
+#admin {
+  padding: 100px 25px 25px 25px;
+  height: 100%;
+  background: white;
+  ul {
+    list-style: none;
+    li {
+      padding: 5px;
+      border: 1px solid;
+      margin-bottom: 10px;
+      p {
+        &.title {
+          font-weight: bold;
+        }
+        &.accion {
+          float: right;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

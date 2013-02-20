@@ -1,1 +1,27 @@
-= render @blogs
+.contenedor
+  #admin
+    %ul
+      - @blogs.each do |blog|
+        - if blog.visible == true
+          %li{:style => 'background: green;'}
+            %p.accion
+              =link_to "Ocultar", ocultar_path(blog.id)
+            %p.title
+              =blog.title
+            %p
+              URL:
+              =blog.url
+            %p
+              =blog.feed_url
+        - else
+          %li{:style => 'background: red;'}
+            %p.accion
+              =link_to "Mostrar", mostrar_path(blog.id)
+            %p.title
+              =blog.title
+            %p
+              URL:
+              =blog.url
+            %p
+              Feed:
+              =blog.feed_url

@@ -4,9 +4,9 @@ class BlogsController < ApplicationController
     @blog = Blog.new params[:blog]
     if @blog.save
       flash[:notice] = true
-      redirect_to :new
+      redirect_to :new_blog
     else
-      render :new
+      render :new_blog
     end
   end
 
