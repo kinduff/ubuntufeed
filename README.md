@@ -24,6 +24,9 @@ Loopear a través de blogs en db y actualizar posts:
 
     rake update:posts
 
+## Colaboradores
++ [Abimael Martell](https://twitter.com/abimaelmartell)
+
 ## Licencia
 UbuntuFeed por Alejandro AR ([@kinduff][1])
 
