@@ -86,7 +86,7 @@ namespace :update do
     puts "Working..."
     feeds_urls = []
     posts = []
-    Blog.all.each do |blog|
+    Blog.where(:visible => true).each do |blog|
       feeds_urls << blog.feed_url
     end
     feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
