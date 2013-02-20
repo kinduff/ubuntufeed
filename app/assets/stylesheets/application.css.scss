@@ -25,13 +25,18 @@ a {
   margin: 0 auto;
   position: relative;
 }
-header {
-  width: 100%;
-  height: 72px;
+
+.ubuntu_grandient{
   background: image-url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAABGCAYAAAAJvS5gAAAAo0lEQVR42mN4H6X5H4YZPua6ITgwxqeqcAgHxADLwBiUKasMgyqrDMGirCIYqqw8CKqsLBCLsrIACOdjqT/UCyW+mMo+FvtAlRV6QZUVeGJRlu8OVQYNB4aPOc5YlGU7QjgfMh0gMh8y7DCVfUi3gSpLtYYqS7HAoizZHKosyRSqLNEEi7IEQygn3gAqE6ePqex9rB6UE6MLlYnWwaJslDMYOQDe5QgFkg8abgAAAABJRU5ErkJggg==');
   -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 1px 5px rgba(50, 50, 50, 0.75);
   box-shadow:         0px 1px 5px rgba(50, 50, 50, 0.75);
+}
+
+header {
+  @extend .ubuntu_grandient;
+  width: 100%;
+  height: 72px;
   position: fixed;
   z-index: 1;
   padding-left: 15px;
@@ -188,4 +193,17 @@ nav {
   background: white;
   margin-top: -3px;
   font-weight: bold;
+}
+
+.load_more{
+  @extend .ubuntu_grandient;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  color: #FFFFFF;
 }

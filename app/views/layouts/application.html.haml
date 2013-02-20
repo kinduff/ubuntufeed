@@ -25,19 +25,10 @@
               = link_to "+", enviar_path
             %li
               = link_to "?", about_path
-            %li
-              -if @posts
-                = paginate @posts
-              -else
-                =link_to "< 0 >", root_path
     = yield
     %aside
     %footer
       .contenedor
-    = javascript_include_tag "application"
     :javascript
-      if ($(".prev").length > 0){
-        $(".prev").after("#{params[:page]}")
-      } else {
-        $(".next").before("< 1")
-      }
+      current_page = #{params[:page] || 1 } 
+    = javascript_include_tag "application"
