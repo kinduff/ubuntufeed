@@ -2,4 +2,6 @@
   .contenedor.shadow
     .posts_container
       = render @posts
-    = link_to "Cargar Mas", "#cargar_mas", {class: 'load_more'}
+    .load_more
+      .loading
+      = link_to "Cargar más", "#load", :class => 'load'

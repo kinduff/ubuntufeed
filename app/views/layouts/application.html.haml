@@ -25,6 +25,11 @@
               = link_to "+", enviar_path
             %li
               = link_to "?", about_path
+            %li.paginate
+              -if @posts
+                = paginate @posts
+              -else
+                =link_to "h", root_path
     = yield
     %aside
     %footer

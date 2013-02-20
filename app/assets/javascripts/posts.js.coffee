@@ -19,6 +19,8 @@ class Posts
       context: this
       success: (posts) ->
         posts_rendered = @render_posts posts
+        $('.loading').hide()
+        $('.load').show()
         $('.posts_container').append(posts_rendered)
         cargar_fechas()
   render_posts: ( posts ) ->
@@ -37,4 +39,6 @@ posts_app = new Posts
 $('.load_more').on 'click', ->
   current_page++
   posts_app.fetch_page current_page
+  $('.load').hide()
+  $('.loading').show()
   false

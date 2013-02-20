@@ -26,7 +26,7 @@ a {
   position: relative;
 }
 
-.ubuntu_grandient{
+.ubuntu_grandient {
   background: image-url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAABGCAYAAAAJvS5gAAAAo0lEQVR42mN4H6X5H4YZPua6ITgwxqeqcAgHxADLwBiUKasMgyqrDMGirCIYqqw8CKqsLBCLsrIACOdjqT/UCyW+mMo+FvtAlRV6QZUVeGJRlu8OVQYNB4aPOc5YlGU7QjgfMh0gMh8y7DCVfUi3gSpLtYYqS7HAoizZHKosyRSqLNEEi7IEQygn3gAqE6ePqex9rB6UE6MLlYnWwaJslDMYOQDe5QgFkg8abgAAAABJRU5ErkJggg==');
   -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 1px 5px rgba(50, 50, 50, 0.75);
@@ -174,7 +174,10 @@ nav {
 @media only screen and (max-device-width: 480px) {
   nav ul li {
     font-size: 1.5em;
-    padding: 20px 0 0 0;
+    padding: 20px 20px 0 0;
+    &.paginate {
+      display: none;
+    }
   }
   header h1 {
     font-size: 1.5em;
@@ -197,13 +200,24 @@ nav {
 
 .load_more{
   @extend .ubuntu_grandient;
-  display: inline-block;
   width: 100%;
-  height: 40px;
-  padding-top: 10px;
+  height: 50px;
   text-align: center;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 20px;
-  color: #FFFFFF;
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #FFFFFF;
+    line-height: 50px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .loading {
+    background: image-url('loading.gif');
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin-top: 10px;
+  }
 }

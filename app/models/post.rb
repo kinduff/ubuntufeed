@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   end
 
   def date_string
-    "#{self.pubdate.day}#{self.pubdate.month}#{self.pubdate.year}"
+    "#{Time.at(self.pubdate).day}#{Time.at(self.pubdate).month}#{Time.at(self.pubdate).year}"
   end
 
 end
