@@ -10,6 +10,8 @@ gem 'paperclip'
 gem 'kaminari'
 gem 'simple_form'
 gem 'underscore-rails'
+gem 'oauth'
+gem 'twitter'
 
 
 group :assets do
