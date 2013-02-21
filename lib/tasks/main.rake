@@ -1,3 +1,6 @@
+# encoding: utf-8
+require "#{Rails.root}/app/helpers/admin_helper"
+include AdminHelper
 require 'feedzirra'
 
 feeds_urls = [
@@ -86,6 +89,7 @@ namespace :update do
     puts "Working..."
     feeds_urls = []
     posts = []
+    tweets = []
     Blog.where(:visible => true).each do |blog|
       feeds_urls << blog.feed_url
     end
@@ -113,6 +117,7 @@ namespace :update do
               :pubdate => pubdate,
               :blog_id => blog_id
             }
+            tweets << "#{title} #{link}"
             puts "\"#{title}\" in array."
           end
         end
@@ -123,6 +128,15 @@ namespace :update do
     if (Post.create(posts))
       puts "Success!"
       puts "Saved: #{posts.count}"
+      puts "Tweeting posts to @UbuntuF..."
+      puts "=========================================="
+      tweets.each do |t|
+        if tweet(t)
+          puts "\"#{t}\" tweeted."
+        end
+      end
+      puts "=========================================="
+      puts "Done!"
     else
       puts "Something went wrong"
     end

@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  include AdminHelper
   http_basic_authenticate_with :name => ENV['U'], :password => ENV['P']
   def index
     @blogs = Blog.order('title ASC').all
@@ -20,6 +21,7 @@ class AdminController < ApplicationController
   def update
     feeds_urls = []
     posts = []
+    tweets = []
     Blog.where(:visible => true).each do |blog|
       feeds_urls << blog.feed_url
     end
@@ -35,6 +37,7 @@ class AdminController < ApplicationController
             end
             pubdate = entry.published
             blog_id = Blog.find_by_feed_url(feed_url).id
+            tweets << "#{title} #{link}"
             posts << {
               :title => title,
               :link => link,
@@ -47,7 +50,10 @@ class AdminController < ApplicationController
       end
     end
     if (Post.create(posts))
-      redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts guardados correctamente." }
+      tweets.each do |t|
+        tweet t
+      end
+      redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts guardados correctamente y tuits enviados." }
     else
       redirect_to admin_index_path, :flash => { :info => "Oh noes! Error. Intenta de nuevo." }
     end
