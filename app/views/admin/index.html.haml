@@ -1,7 +1,8 @@
 .contenedor
   #admin
     .update
-      =link_to "Actualizar blogs", update_path
+      =link_to "Actualizar blogs con tweet", update_path('1')
+      =link_to "Actualizar blogs", update_path('0')
     - if flash[:info]
       %p.notice
         ¡Proceso terminado!

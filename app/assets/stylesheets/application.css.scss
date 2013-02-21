@@ -250,10 +250,11 @@ nav {
       font-weight: bold;
       padding: 10px;
       display: block;
-      width: 130px;
+      width: auto;
       height: 19px;
       text-align: center;
       float: right;
+      margin-left: 10px;
     }
   }
 }
@@ -281,6 +282,6 @@ nav {
     }
   }
   .feed {
-    display: none;
+    display: none !important;
   }
 }
