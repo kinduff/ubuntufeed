@@ -201,4 +201,14 @@ es:
         url: URL del sitio
         feed_url: Feed del sitio (RSS, Feedburner, Atom)
     errors:
+      models:
+        blog:
+          attributes:
+            title:
+              blank: Escribe un titulo
+            url:
+              blank: Escribe una URL
+            feed_url:
+              blank: Escribe una URL
+
       <<: *errors

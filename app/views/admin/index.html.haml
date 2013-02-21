@@ -1,6 +1,6 @@
 .contenedor
   #admin
-    %ul
+    %ul.blogs_list
       - @blogs.each do |blog|
         - if blog.visible == true
           %li{:style => 'background: green;'}
