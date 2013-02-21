@@ -55,6 +55,12 @@ header {
     height: 20px; 
     margin: 25px 5px 0 0;
   }
+  .feed {
+    width: 25px;
+    height: 25px;
+    background: image-url('rss.png');
+    display: inline-block;
+  }
 }
 section {
   padding-top: 72px;
