@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
       flash[:notice] = true
       redirect_to :new_blog
     else
-      render :new_blog
+      render :new
     end
   end
 
