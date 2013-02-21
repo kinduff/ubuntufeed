@@ -8,7 +8,8 @@ Ubuntufeed::Application.routes.draw do
 
   get 'mostrar/:id', :to => 'admin#mostrar', :as => 'mostrar'
   get 'ocultar/:id', :to => 'admin#ocultar', :as => 'ocultar'
-  get 'update/:arg', :to => 'admin#update', :as => 'update'
+  get 'actualizar/:arg', :to => 'admin#actualizar', :as => 'actualizar'
+  get 'eliminar/:id', :to => 'admin#eliminar', :as => 'eliminar'
 
   resources :posts
   resources :blogs

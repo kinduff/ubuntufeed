@@ -18,7 +18,37 @@ class AdminController < ApplicationController
       redirect_to admin_index_path
     end
   end
+  def eliminar
+    blog = Blog.find params[:id]
+    if blog.destroy
+      redirect_to admin_index_path
+    end
+  end
+  def new
+    @blog = Blog.new
+  end
+  def create
+    @blog = Blog.new params[:blog]
+    @blog.visible = true
+    if @blog.save
+      flash[:notice] = true
+      redirect_to :new_admin
+    else
+      render :new_admin
+    end
+  end
+  def edit
+    @blog = Blog.find params[:id]
+  end
   def update
+    @blog = Blog.find params[:id]
+    if @blog.update_attributes params[:blog]
+      redirect_to :new_admin
+    else
+      render :edit
+    end
+  end
+  def actualizar
     feeds_urls = []
     posts = []
     tweets = []
