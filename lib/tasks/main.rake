@@ -85,7 +85,7 @@ end
 
 namespace :update do
   desc "Update blogs"
-  task :posts => :environment do
+  task :posts, [:tweet] => :environment do |t, args|
     puts "Working..."
     feeds_urls = []
     posts = []
@@ -128,15 +128,17 @@ namespace :update do
     if (Post.create(posts))
       puts "Success!"
       puts "Saved: #{posts.count}"
-      puts "Tweeting posts to @UbuntuF..."
-      puts "=========================================="
-      tweets.each do |t|
-        if tweet(t)
-          puts "\"#{t}\" tweeted."
+      if args[:tweet]
+        puts "Tweeting posts to @UbuntuF..."
+        puts "=========================================="
+        tweets.each do |t|
+          if tweet(t)
+            puts "\"#{t}\" tweeted."
+          end
         end
+        puts "=========================================="
+        puts "Done!"
       end
-      puts "=========================================="
-      puts "Done!"
     else
       puts "Something went wrong"
     end
