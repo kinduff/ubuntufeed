@@ -17,4 +17,39 @@ class AdminController < ApplicationController
       redirect_to admin_index_path
     end
   end
+  def update
+    feeds_urls = []
+    posts = []
+    Blog.where(:visible => true).each do |blog|
+      feeds_urls << blog.feed_url
+    end
+    feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
+    feeds.each do |feed_url, feed|
+      feed.entries.each do |entry|
+        if Post.where(:link => entry.url).count == 0
+          unless entry.title.nil?
+            title = entry.title
+            link = entry.url
+            unless entry.summary.nil?
+              description = entry.summary.sanitize[0..140]
+            end
+            pubdate = entry.published
+            blog_id = Blog.find_by_feed_url(feed_url).id
+            posts << {
+              :title => title,
+              :link => link,
+              :description => description,
+              :pubdate => pubdate,
+              :blog_id => blog_id
+            }
+          end
+        end
+      end
+    end
+    if (Post.create(posts))
+      redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts guardados correctamente." }
+    else
+      redirect_to admin_index_path, :flash => { :info => "Oh noes! Error. Intenta de nuevo." }
+    end
+  end
 end

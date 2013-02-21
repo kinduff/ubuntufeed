@@ -1,5 +1,12 @@
 .contenedor
   #admin
+    .update
+      =link_to "Actualizar blogs", update_path
+    - if flash[:info]
+      %p.notice
+        ¡Proceso terminado!
+        %br
+        =flash[:info]
     %ul.blogs_list
       - @blogs.each do |blog|
         - if blog.visible == true

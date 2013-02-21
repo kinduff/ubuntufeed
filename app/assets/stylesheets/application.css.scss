@@ -171,23 +171,6 @@ nav {
 .error {
   color: red;
 }
-@media only screen and (max-device-width: 480px) {
-  nav ul li {
-    font-size: 1.5em;
-    padding: 20px 20px 0 0;
-    &.paginate {
-      display: none;
-    }
-  }
-  header h1 {
-    font-size: 1.5em;
-  }
-  #enviar {
-    input {
-      width: 100%;
-    }
-  }
-}
 .fecha {
   color: #2C001E;
   height: 25px;
@@ -231,6 +214,7 @@ nav {
       padding: 5px;
       border: 1px solid;
       margin-bottom: 10px;
+      word-wrap: break-word;
       p {
         &.title {
           font-weight: bold;
@@ -242,6 +226,53 @@ nav {
           }
         }
       }
+    }
+  }
+  .notice {
+    font-size: 1.5em;
+    display: block;
+    background: yellow;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .update {
+    height: 50px;
+    a {
+      background: #EF5A29;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      display: block;
+      width: 130px;
+      height: 19px;
+      text-align: center;
+      float: right;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  nav ul li {
+    font-size: 1.5em;
+    padding: 20px 20px 0 0;
+    &.paginate {
+      display: none;
+    }
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  #enviar {
+    input {
+      width: 100%;
+    }
+  }
+  .update {
+    a {
+      float: none;
+      width: none;
     }
   }
 }
