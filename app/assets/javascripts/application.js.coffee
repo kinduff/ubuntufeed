@@ -15,3 +15,13 @@ window.cargar_fechas = cargar_fechas
 $ ->
   cargar_fechas()
   $('.loading').hide()
+
+$('.social').on 'click', (e) ->
+  e.preventDefault()
+  $(this).hide()
+  $(this).next('.share').toggle()
+
+$("article").on("mouseenter", ->
+  $(this).find('.social').show()
+).on "mouseleave", ->
+  $('.social, .share').hide()

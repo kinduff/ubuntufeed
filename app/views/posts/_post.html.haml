@@ -1,5 +1,13 @@
 %article
   %p.fecha{:data => { :date => post.date_string } }
     = post.date
+  = link_to 'Compartir', '#', :class => 'social'
+  %ul.share
+    %li
+      = link_to 'Facebook', '#'
+    %li
+      = link_to 'Twitter', '#'
+    %li
+      = link_to 'Copiar URL', '#'
   %p
-    = link_to post.title[0..115], post.link, :target => 'blank'
+    = link_to post.title[0..115], post.link, :target => 'blank', :class => 'link'

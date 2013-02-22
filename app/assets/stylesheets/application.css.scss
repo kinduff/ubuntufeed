@@ -38,7 +38,7 @@ header {
   width: 100%;
   height: 72px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   padding-left: 15px;
   h1 {
     float: left;
@@ -78,7 +78,7 @@ article {
   &:nth-last-child(even) {
     background: #333;
   }
-  &:hover a {
+  &:hover a.link {
     padding-left: 20px;
   }
   p {
@@ -284,4 +284,35 @@ nav {
   .feed {
     display: none !important;
   }
+}
+ul.share {
+  list-style: none;
+  width: auto;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  display: none;
+  margin-top: 10px;
+  li {
+    display: inline-block;
+    background: #EF5A29;
+    padding: 5px;
+    a {
+      color: #FFF;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    &:hover {
+      background: #FF7A3F;
+    }
+  }
+}
+.social {
+  float: right;
+  display: none;
+  line-height: 50px;
+  margin-right: 10px;
+  color: #FF7A3F;
+  text-decoration: none;
 }
