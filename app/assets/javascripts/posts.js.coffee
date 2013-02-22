@@ -1,4 +1,5 @@
 class Posts
+  url = document.location.hostname
   post_template = _.template("
   <article>
     <div class='contenedor'>
@@ -22,7 +23,7 @@ class Posts
       </ul>
       <p>
         <span class='blog'><%= blog.title %></span>
-        <a href='<%= link %>' target='blank' class='link'><%= title %></a>
+        <a href='http://"+url+"/post/<%= id %>/<%= slug %>' target='blank' class='link'><%= title %></a>
       </p>
     </div>
   </article>")
