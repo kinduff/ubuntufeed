@@ -143,4 +143,35 @@ namespace :update do
       puts "Something went wrong"
     end
   end
+  task :show => :environment do
+    puts "Working..."
+    feeds_urls = []
+    posts = []
+    Blog.where(:visible => true).each do |blog|
+      feeds_urls << blog.feed_url
+    end
+    feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
+    feeds.each do |feed_url, feed|
+      puts " "
+      puts "=========================================="
+      puts "Looping through \"#{feed.title}\" entries."
+      puts "=========================================="
+      puts " "
+      feed.entries.each do |entry|
+        if Post.where(:link => entry.url).count == 0
+          unless entry.title.nil?
+            title = entry.title
+            link = entry.url
+            posts << {
+              :title => title,
+              :link => link
+            }
+            puts "\"#{title}\" in array."
+          end
+        end
+      end
+    end
+    puts "=========================================="
+    puts "#{posts.count} posts in array."
+  end
 end
