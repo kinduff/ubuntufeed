@@ -15,4 +15,19 @@ class PostsController < ApplicationController
   def feed
     @posts = Post.order('pubdate DESC').page params[:page]
   end
+
+  def post
+    post = Post.find params[:id]
+    stat = Stat.find_or_create_by_post_id(params[:id])
+    if stat.clicks.nil?
+      stat.clicks = 1
+    else
+      stat.clicks += 1
+    end
+    if stat.save
+      redirect_to post.link
+    else
+      redirect_to post.link
+    end
+  end
 end

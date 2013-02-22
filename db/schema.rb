@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214210602) do
+ActiveRecord::Schema.define(:version => 20130222224911) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(:version => 20130214210602) do
     t.datetime "pubdate"
     t.text     "description"
     t.integer  "blog_id"
+  end
+
+  create_table "stats", :force => true do |t|
+    t.integer "post_id"
+    t.integer "clicks"
   end
 
 end
