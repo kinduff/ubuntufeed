@@ -287,6 +287,9 @@ ul.share {
   margin-right: 10px;
   color: #FF7A3F;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 @media only screen and (max-device-width: 480px) {
   nav ul li {
