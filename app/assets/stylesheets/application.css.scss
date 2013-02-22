@@ -98,12 +98,6 @@ article {
           -ms-transition: all 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
            -o-transition: all 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
               transition: all 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
-      &:hover:after {
-        content: ' >';
-        color:silver;
-        padding-left: 20px;
-
-      }
       &:visited {
         color: gray;
       }
