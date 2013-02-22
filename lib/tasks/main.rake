@@ -117,7 +117,8 @@ namespace :update do
               :pubdate => pubdate,
               :blog_id => blog_id
             }
-            tweets << "#{title} #{link}"
+            short = short link
+            tweets << "#{title} #{short}"
             puts "\"#{title}\" in array."
           end
         end

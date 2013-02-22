@@ -9,4 +9,9 @@ module AdminHelper
     client = Twitter::Client.new
     client.update(string)
   end
+  def short url
+    bitly = Bitly.new(ENV['BU'], ENV['BA'])
+    page_url = bitly.shorten(url)
+    return page_url.shorten
+  end
 end

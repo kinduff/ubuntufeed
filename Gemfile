@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'underscore-rails'
 gem 'oauth'
 gem 'twitter'
+gem 'bitly'
 
 
 group :assets do
