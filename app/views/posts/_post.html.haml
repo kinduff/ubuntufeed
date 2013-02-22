@@ -1,16 +1,17 @@
 %article
-  %p.fecha{:data => { :date => post.date_string } }
-    = post.date
-  = link_to 'Compartir', '#', :class => 'social'
-  %ul.share
-    %li
-      %a.copy{:href=> post.link}
-        Copiar URL
-    %li
-      %a.tw{:href=> post.link, :title => bonito(post.title)}
-        Twitter
-    %li
-      %a.fb{:href=> post.link, :title => bonito(post.title)}
-        Facebook
-  %p
-    = link_to post.title[0..115], post.link, :target => 'blank', :class => 'link'
+  .contenedor
+    %p.fecha{:data => { :date => post.date_string } }
+      = post.date
+    = link_to 'Compartir', '#', :class => 'social'
+    %ul.share
+      %li
+        %a.copy{:href=> post.link}
+          Copiar URL
+      %li
+        %a.tw{:href=> post.link, :title => bonito(post.title)}
+          Twitter
+      %li
+        %a.fb{:href=> post.link, :title => bonito(post.title)}
+          Facebook
+    %p
+      = link_to post.title[0..115], post.link, :target => 'blank', :class => 'link'

@@ -1,12 +1,30 @@
 class Posts
   post_template = _.template("
   <article>
-    <p data-date='<%= date_string %>'  class='fecha'>
-      <%= date %>
-    </p>
-    <p>
-      <a href='<%= link %>' target='blank'><%= title %></a>
-    </p>
+    <div class='contenedor'>
+      <p data-date='<%= date_string %>'  class='fecha'>
+        <%= date %>
+      </p>
+      <a href='#' class='social'>Compartir</a>
+      <ul class='share'>
+        <li>
+          <a class='copy' href='<%= link %>'>
+            Copiar URL</a>
+        </li>
+        <li>
+          <a class='tw' href='<%= link %>' title='<%= title %>'>
+            Twitter</a>
+        </li>
+        <li>
+          <a class='fb' href='<%= link %>' title='<%= title %>'>
+            Facebook</a>
+        </li>
+      </ul>
+
+      <p>
+        <a href='<%= link %>' target='blank'><%= title %></a>
+      </p>
+    </div>
   </article>")
 
   fetch_page: ( page ) ->

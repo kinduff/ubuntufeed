@@ -16,28 +16,28 @@ $ ->
   cargar_fechas()
   $('.loading').hide()
 
-$('.social').on 'click', (e) ->
+$(document).on 'click', '.social', (e) ->
   e.preventDefault()
   $(this).hide()
-  $(this).next('.share').toggle()
+  $(this).next('.share').show()
 
-$("article").on("mouseenter", ->
+$(".contenedor").on("mouseenter", 'article', ->
   $(this).find('.social').show()
-).on "mouseleave", ->
+).on "mouseleave", 'article', ->
   $('.social, .share').hide()
 
-$("a.tw").on "click", (e) ->
+$(document).on "click", 'a.tw', (e) ->
   e.preventDefault()
   loc = $(this).attr("href")
   title = escape($(this).attr("title"))
   window.open "http://twitter.com/share?url=" + loc + "&text=" + title + "&via=ubuntuf" + "&related=kinduff", "twitterwindow", "height=450, width=550, top=" + ($(window).height() / 2 - 225) + ", left=" + $(window).width() / 2 + ", toolbar=0, location=0, menubar=0, directories=0, scrollbars=0"
 
-$("a.fb").on "click", (e) ->
+$(document).on "click", 'a.fb', (e) ->
   e.preventDefault()
   loc = $(this).attr("href")
   title = escape($(this).attr("title"))
   window.open "http://www.facebook.com/sharer.php?u=" + loc + "&t=" + title, "facebookwindow", "height=450, width=550, top=" + ($(window).height() / 2 - 225) + ", left=" + $(window).width() / 2 + ", toolbar=0, location=0, menubar=0, directories=0, scrollbars=0"
 
-$("a.copy").on "click", (e) ->
+$(document).on "click", 'a.copy', (e) ->
   e.preventDefault()
   window.prompt "Copiar a portapapeles: Ctrl+C, Enter", $(this).attr("href")
