@@ -68,7 +68,8 @@ class AdminController < ApplicationController
             end
             pubdate = entry.published
             blog_id = Blog.find_by_feed_url(feed_url).id
-            tweets << "#{title} #{link}"
+            short = short link
+            tweets << "#{title} #{short}"
             posts << {
               :title => title,
               :link => link,
