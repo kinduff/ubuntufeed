@@ -1,0 +1,14 @@
+.contenedor
+  #enviar
+    %h2 Enviar blog a UbuntuFeed
+    - if flash[:notice]
+      %p Editado con éxito.
+      %br
+      %p
+        = link_to "Regresar al administrador", admin_path
+    - else
+      = simple_form_for @blog, :url => admin_update_path do | f |
+        = f.input :title
+        = f.input :url, :placeholder => 'http://'
+        = f.input :feed_url, :placeholder => 'http://'
+        = f.submit 'Editar blog'

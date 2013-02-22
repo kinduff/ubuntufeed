@@ -1,7 +1,7 @@
 .contenedor
   #admin
     .update
-      =link_to "Agregar blog", enviar_path
+      =link_to "Agregar blog", admin_new_path
       =link_to "Actualizar blogs", actualizar_path('0')
       =link_to "Actualizar blogs con tweet", actualizar_path('1')
       =link_to "Ver entradas pendientes", actualizar_path('2')
@@ -15,6 +15,7 @@
         - if blog.visible == true
           %li{:style => 'background: green;'}
             %p.accion
+              =link_to "Editar", admin_edit_path(blog.id)
               =link_to "Ocultar", ocultar_path(blog.id)
             %p.title
               =blog.title
@@ -26,6 +27,7 @@
         - else
           %li{:style => 'background: red;'}
             %p.accion
+              =link_to "Editar", admin_edit_path(blog.id)
               =link_to "Eliminar", eliminar_path(blog.id)
               =link_to "Mostrar", mostrar_path(blog.id)
             %p.title

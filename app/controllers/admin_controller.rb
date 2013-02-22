@@ -34,7 +34,7 @@ class AdminController < ApplicationController
       flash[:notice] = true
       redirect_to :new_admin
     else
-      render :new_admin
+      render :new
     end
   end
   def edit
@@ -43,7 +43,8 @@ class AdminController < ApplicationController
   def update
     @blog = Blog.find params[:id]
     if @blog.update_attributes params[:blog]
-      redirect_to :new_admin
+      flash[:notice] = true
+      redirect_to :admin_edit
     else
       render :edit
     end

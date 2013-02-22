@@ -10,10 +10,14 @@ Ubuntufeed::Application.routes.draw do
   get 'ocultar/:id', :to => 'admin#ocultar', :as => 'ocultar'
   get 'actualizar/:arg', :to => 'admin#actualizar', :as => 'actualizar'
   get 'eliminar/:id', :to => 'admin#eliminar', :as => 'eliminar'
+  get 'admin', :to => 'admin#index', :as => 'admin'
+  get 'admin/new', :to => 'admin#new', :as => 'admin_new'
+  post 'admin/new', :to => 'admin#create', :as => 'admin_create'
+  get 'admin/edit/:id', :to => 'admin#edit', :as => 'admin_edit'
+  put 'admin/edit/:id', :to => 'admin#update', :as => 'admin_update'
 
   resources :posts
   resources :blogs
-  resources :admin
 
   match '*path' => redirect('/') unless Rails.env.development?
 end
