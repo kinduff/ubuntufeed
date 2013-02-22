@@ -14,4 +14,6 @@ Ubuntufeed::Application.routes.draw do
   resources :posts
   resources :blogs
   resources :admin
+
+  match '*path' => redirect('/') unless Rails.env.development?
 end
