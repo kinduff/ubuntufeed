@@ -8,20 +8,20 @@ class AdminController < ApplicationController
     blog = Blog.find params[:id]
     blog.visible = false
     if blog.save
-      redirect_to admin_index_path
+      redirect_to admin_path
     end
   end
   def mostrar
     blog = Blog.find params[:id]
     blog.visible = true
     if blog.save
-      redirect_to admin_index_path
+      redirect_to admin_path
     end
   end
   def eliminar
     blog = Blog.find params[:id]
     if blog.destroy
-      redirect_to admin_index_path
+      redirect_to admin_path
     end
   end
   def new
@@ -81,7 +81,7 @@ class AdminController < ApplicationController
       end
     end
     if params[:arg] == '2'
-      redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts pendientes." }
+      redirect_to admin_path, :flash => { :info => "#{posts.count} posts pendientes." }
     else
       if (Post.create(posts))
         if params[:arg] == '1'
@@ -89,9 +89,9 @@ class AdminController < ApplicationController
             tweet t
           end
         end
-        redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts guardados correctamente." }
+        redirect_to admin_path, :flash => { :info => "#{posts.count} posts guardados correctamente." }
       else
-        redirect_to admin_index_path, :flash => { :info => "Oh noes! Error. Intenta de nuevo." }
+        redirect_to admin_path, :flash => { :info => "Oh noes! Error. Intenta de nuevo." }
       end
     end
   end
