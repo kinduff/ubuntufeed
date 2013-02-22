@@ -79,15 +79,19 @@ class AdminController < ApplicationController
         end
       end
     end
-    if (Post.create(posts))
-      if params[:arg] == '1'
-        tweets.each do |t|
-          tweet t
-        end
-      end
-      redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts guardados correctamente." }
+    if params[:arg] == '2'
+      redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts pendientes." }
     else
-      redirect_to admin_index_path, :flash => { :info => "Oh noes! Error. Intenta de nuevo." }
+      if (Post.create(posts))
+        if params[:arg] == '1'
+          tweets.each do |t|
+            tweet t
+          end
+        end
+        redirect_to admin_index_path, :flash => { :info => "#{posts.count} posts guardados correctamente." }
+      else
+        redirect_to admin_index_path, :flash => { :info => "Oh noes! Error. Intenta de nuevo." }
+      end
     end
   end
 end
