@@ -20,9 +20,9 @@ class Posts
             Facebook</a>
         </li>
       </ul>
-
       <p>
-        <a href='<%= link %>' target='blank'><%= title %></a>
+        <span class='blog'><%= blog.title %></span>
+        <a href='<%= link %>' target='blank' class='link'><%= title %></a>
       </p>
     </div>
   </article>")

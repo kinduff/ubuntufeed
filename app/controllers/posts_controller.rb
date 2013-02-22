@@ -6,7 +6,8 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @posts.to_json(
-          :methods => [:date,:date_string]
+          :methods => [:date,:date_string],
+          :include => { :blog => { :only => :title } }
       ) }
     end
   end
