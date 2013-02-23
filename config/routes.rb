@@ -17,6 +17,7 @@ Ubuntufeed::Application.routes.draw do
   post 'admin/new', :to => 'admin#create', :as => 'admin_create'
   get 'admin/edit/:id', :to => 'admin#edit', :as => 'admin_edit'
   put 'admin/edit/:id', :to => 'admin#update', :as => 'admin_update'
+  get 'admin/stats', :to => 'admin#stats', :as => 'admin_stats'
 
   resources :posts
   resources :blogs

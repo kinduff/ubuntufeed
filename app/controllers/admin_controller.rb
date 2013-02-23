@@ -96,4 +96,7 @@ class AdminController < ApplicationController
       end
     end
   end
+  def stats
+    @stats = Stat.order('clicks DESC')
+  end
 end
