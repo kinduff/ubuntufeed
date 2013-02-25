@@ -38,13 +38,13 @@ a {
 header {
   @extend .ubuntu_grandient;
   width: 100%;
-  height: 72px;
+  height: 50px;
   position: fixed;
   z-index: 2;
   padding-left: 15px;
   h1 {
     float: left;
-    line-height: 72px;
+    line-height: 50px;
     a {
       color: white;
       text-decoration: none;
@@ -55,7 +55,7 @@ header {
     background: image-url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADP0lEQVR42oWVX0hTcRTHZz2kPVgUFNVDREo9ZPUmRVD0UJmZ5r8e0gIjreglSMUgstDUILQyC4wsITKyCFKMiswSrcgMyizbdjfnptvuNpp32727d/t2ftdpbjr9wdnc73fO53f+/Y4aTcQym82LZVneFwgE7pNwwWBQJFFIJEVRbPT9mvZLJUnaBGCBZq5FCotIMsjgBRl6SBBFPEyHLjjEbGaFORyOeFKqJOWx4MSaFSa7eHgG+6AIf4OkbyW5QtD4MBjHcbEUZiUdCnN4pYr58jHoD28E//g6FMkHZhOCxk7ljLke8kw1IgUofgmSfRTWxosYOZ+rivPlQxhP74L2wGqM3SiG4hmfvMhKjEyCxmhEUUwJ5Sw4CZP4UbjamuB61QJd1nrojyRNSP5m2O5egrmiAJ4fn1TdEDBIwHYCLtNQqM3TCyB7BNjuVUCXuQ58Sy3c3W0Q+johfOkE31oP49lUGE/thL25mnSnPGRwLzm3R0N/GKfnyGcYhC4nEYbjyRCHh6Z7gQClwacbgKEgmXQS4OMGwwsmy9c0rL8CsgyfSQvhey/4pw2Uo1VwtN4igH9GUdgeO9PuXwnbnQuR590MqIgWDqaSDGhTSelBFUzFByF8fRe10t7f/RitKQLfXBN+WSBgYiH7RbOeIOnQpqyAlQFL0gnYFR04xIAnZwCpMCMa+rArsh9ewy+M978H/6RebQvns9sIyLOETHsOOmMhWxvKIoE9DPg27HY9FSU7AYbC7VSUPzOLwlFRTmxTdby6n5Eh17L3W8ZK/r9txmFrLIcuYy3sLXVw93RA+PYBQn+X6vXwuTQYi3bA3lQZ1jYkXqryXgZMYk0Z1th2C5zPG+F6Q42dnQju6FZw+VvA5U00tqWqEJ6Bz5GN3eF2u5cz4EL6kUWHtrCnJ0kQbSaM3SzFcHGa6pmzvRnGM7uhTVsDa33p1NMjfTsxctSnFxpbcbRZPc/ImhgO5XnQ524A/6gWiuhTRxmFepUxImfhEoLWhDyNOr78Tis89ADkcRcbX7YQbGm0ARtLrmezfLAkz+Gpl2AdNLVzTCZT3HxTO4ZNDVYxkjoy7qULLARg8pHtsX8RTGcqZ9PWPwFF8p1O4u+2AAAAAElFTkSuQmCC');
     width: 20px;
     height: 20px; 
-    margin: 25px 5px 0 0;
+    margin: 15px 5px 0 0;
   }
   .feed {
     width: 25px;
@@ -65,7 +65,7 @@ header {
   }
 }
 section {
-  padding-top: 72px;
+  padding-top: 50px;
 }
 .shadow {
   -webkit-box-shadow: 0px 0px 5px black;
@@ -114,7 +114,7 @@ nav {
       font-size: 2.5em;
       z-index: 2;
       color: white;
-      padding: 10px 0 10px 30px;
+      padding: 0px 0 10px 30px;
       a {
         color: white;
         text-decoration: none;
@@ -129,7 +129,7 @@ nav {
   }
 }
 #about {
-  padding: 100px 25px 25px 25px;
+  padding: 65px 25px 25px 25px;
   height: 100%;
   background: white;
   h1, h2 {
@@ -147,7 +147,7 @@ nav {
   }
 }
 #enviar {
-  padding: 100px 25px 25px 25px;
+  padding: 65px 25px 25px 25px;
   height: 100%;
   background: white;
   h2 {
@@ -208,7 +208,7 @@ nav {
   }
 }
 #admin {
-  padding: 100px 25px 25px 25px;
+  padding: 65px 25px 25px 25px;
   height: 100%;
   background: white;
   ul {
