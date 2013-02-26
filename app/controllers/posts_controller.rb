@@ -30,4 +30,8 @@ class PostsController < ApplicationController
       redirect_to post.link
     end
   end
+
+  def populares
+    @stats = Stat.order('clicks DESC').limit(50)
+  end
 end

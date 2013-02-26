@@ -40,9 +40,13 @@ $(document).on "click", 'a.copy', (e) ->
   e.preventDefault()
   window.prompt "Copiar a portapapeles: Ctrl+C, Enter", $(this).attr("href")
 
+$(document).on 'click', '.menutrigger', (e) ->
+  e.preventDefault()
+  $('.menu').toggle()
+
 counter = 0
 $(window).scroll ->
   unless counter >= 3
-    if $(window).height() + $(window).scrollTop() >= ($(document).height()-1)
+    if $(window).scrollTop() + $(window).height() >= $(document).height()
       $('a.load').trigger('click')
       counter += 1

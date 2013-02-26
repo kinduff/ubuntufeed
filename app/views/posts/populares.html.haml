@@ -1,0 +1,22 @@
+%section.populares
+  .contenedor.shadow
+    .posts_container
+      %h2 Top 50 de posts populares
+      - @stats.each do |stat|
+        %article
+          .contenedor
+            = link_to 'Compartir', '#', :class => 'social'
+            %ul.share
+              %li
+                %a.copy{:href=> stat.post.link}
+                  Copiar URL
+              %li
+                %a.tw{:href=> stat.post.link, :title => bonito(stat.post.title)}
+                  Twitter
+              %li
+                %a.fb{:href=> stat.post.link, :title => bonito(stat.post.title)}
+                  Facebook
+            %p
+              %span.blog
+                = stat.post.blog.title
+              = link_to stat.post.title, post_path(stat.post.id, stat.post.slug), :target => 'blank', :class => 'link'
