@@ -89,13 +89,16 @@ article {
   p {
     overflow: hidden;
     a.link {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 680px;
       color: white;
       text-decoration: none;
       display: inline-block;
       height: 100%;
-      width: auto;
       padding: 15px;
-      word-wrap:break-word;
       -webkit-transition: all 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
          -moz-transition: all 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
           -ms-transition: all 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 

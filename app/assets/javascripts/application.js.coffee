@@ -10,11 +10,9 @@ cargar_fechas = ->
 if $(".prev").length > 0
   $(".prev").after current_page
 
-
 window.cargar_fechas = cargar_fechas
-$ ->
-  cargar_fechas()
-  $('.loading').hide()
+cargar_fechas()
+$('.loading').hide()
 
 $(document).on 'click', '.social', (e) ->
   e.preventDefault()
@@ -41,3 +39,10 @@ $(document).on "click", 'a.fb', (e) ->
 $(document).on "click", 'a.copy', (e) ->
   e.preventDefault()
   window.prompt "Copiar a portapapeles: Ctrl+C, Enter", $(this).attr("href")
+
+counter = 0
+$(window).scroll ->
+  unless counter >= 3
+    if $(window).height() + $(window).scrollTop() >= ($(document).height()-1)
+      $('a.load').trigger('click')
+      counter += 1
