@@ -45,6 +45,7 @@ header {
   h1 {
     float: left;
     line-height: 50px;
+    font-size: 1.5em;
     a {
       color: white;
       text-decoration: none;
@@ -53,14 +54,16 @@ header {
   .logo {
     float: left;
     background: image-url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADP0lEQVR42oWVX0hTcRTHZz2kPVgUFNVDREo9ZPUmRVD0UJmZ5r8e0gIjreglSMUgstDUILQyC4wsITKyCFKMiswSrcgMyizbdjfnptvuNpp32727d/t2ftdpbjr9wdnc73fO53f+/Y4aTcQym82LZVneFwgE7pNwwWBQJFFIJEVRbPT9mvZLJUnaBGCBZq5FCotIMsjgBRl6SBBFPEyHLjjEbGaFORyOeFKqJOWx4MSaFSa7eHgG+6AIf4OkbyW5QtD4MBjHcbEUZiUdCnN4pYr58jHoD28E//g6FMkHZhOCxk7ljLke8kw1IgUofgmSfRTWxosYOZ+rivPlQxhP74L2wGqM3SiG4hmfvMhKjEyCxmhEUUwJ5Sw4CZP4UbjamuB61QJd1nrojyRNSP5m2O5egrmiAJ4fn1TdEDBIwHYCLtNQqM3TCyB7BNjuVUCXuQ58Sy3c3W0Q+johfOkE31oP49lUGE/thL25mnSnPGRwLzm3R0N/GKfnyGcYhC4nEYbjyRCHh6Z7gQClwacbgKEgmXQS4OMGwwsmy9c0rL8CsgyfSQvhey/4pw2Uo1VwtN4igH9GUdgeO9PuXwnbnQuR590MqIgWDqaSDGhTSelBFUzFByF8fRe10t7f/RitKQLfXBN+WSBgYiH7RbOeIOnQpqyAlQFL0gnYFR04xIAnZwCpMCMa+rArsh9ewy+M978H/6RebQvns9sIyLOETHsOOmMhWxvKIoE9DPg27HY9FSU7AYbC7VSUPzOLwlFRTmxTdby6n5Eh17L3W8ZK/r9txmFrLIcuYy3sLXVw93RA+PYBQn+X6vXwuTQYi3bA3lQZ1jYkXqryXgZMYk0Z1th2C5zPG+F6Q42dnQju6FZw+VvA5U00tqWqEJ6Bz5GN3eF2u5cz4EL6kUWHtrCnJ0kQbSaM3SzFcHGa6pmzvRnGM7uhTVsDa33p1NMjfTsxctSnFxpbcbRZPc/ImhgO5XnQ524A/6gWiuhTRxmFepUxImfhEoLWhDyNOr78Tis89ADkcRcbX7YQbGm0ARtLrmezfLAkz+Gpl2AdNLVzTCZT3HxTO4ZNDVYxkjoy7qULLARg8pHtsX8RTGcqZ9PWPwFF8p1O4u+2AAAAAElFTkSuQmCC');
-    width: 20px;
-    height: 20px; 
-    margin: 15px 5px 0 0;
+    background-size: 100%;
+    width: 15px;
+    height: 15px; 
+    margin: 17px 5px 0 0;
   }
   .feed {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     background: image-url('rss.png');
+    background-size: 100%;
     display: inline-block;
   }
 }
@@ -111,10 +114,10 @@ nav {
     padding-right: 30px;
     li {
       display: inline-block;
-      font-size: 2.5em;
+      font-size: 1.8em;
       z-index: 2;
       color: white;
-      padding: 0px 0 10px 30px;
+      padding: 5px 0 10px 30px;
       a {
         color: white;
         text-decoration: none;
