@@ -1,3 +1,4 @@
+# coding: utf-8
 class Post < ActiveRecord::Base
   attr_accessible :link, :pubdate, :title, :blog_id, :slug, :description
   belongs_to :blog
@@ -10,7 +11,13 @@ class Post < ActiveRecord::Base
   end
 
   def date
-     I18n.localize(Time.at(self.pubdate), :format => '%A, %d de %B de %Y' )
+    date = I18n.localize(Time.at(self.pubdate), :format => '%A, %d de %B de %Y' )
+    today = I18n.localize(Time.at(Time.now), :format => '%A, %d de %B de %Y' )
+    if date == today
+      return "Entradas del día de hoy"
+    else
+      return date
+    end
   end
 
   def date_string
