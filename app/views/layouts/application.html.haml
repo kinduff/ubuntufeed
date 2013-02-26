@@ -29,9 +29,11 @@
   %body
     %header
       .contenedor
-        .logo
         %h1
-          =link_to "UbuntuFeed", root_path
+          %a{:href => '/'}
+            %span
+              .logo
+              UbuntuFeed
         %nav
           %ul
             %li
