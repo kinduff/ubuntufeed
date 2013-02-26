@@ -1,7 +1,11 @@
 !!!
 %html
   %head
-    %title UbuntuFeed | Noticias de Ubuntu en español
+    %title
+      - unless yield(:title).empty?
+        = "#{yield(:title)} | UbuntuFeed"
+      - else
+        UbuntuFeed | Noticias de Ubuntu en español
     %meta{ :charset => "utf-8" }
     %meta{ :'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
     %meta{ :content => 'width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no', :name => 'viewport' }
