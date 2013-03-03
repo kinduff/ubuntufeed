@@ -59,7 +59,7 @@ class AdminController < ApplicationController
     feeds = Feedzirra::Feed.fetch_and_parse(feeds_urls)
     feeds.each do |feed_url, feed|
       feed.entries.each do |entry|
-        if Post.where(:link => entry.url).count == 0
+        if (Post.where(:link => entry.url).count == 0) || (Post.where(:slug => entry.title.parameterize).count == 0)
           unless entry.title.nil?
             title = entry.title
             link = entry.url
