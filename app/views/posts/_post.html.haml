@@ -5,13 +5,13 @@
     = link_to 'Compartir', '#', :class => 'social'
     %ul.share
       %li
-        %a.copy{:href=> post.link}
+        %a.copy{:href=> post_url(post.id, post.slug)}
           Copiar URL
       %li
-        %a.tw{:href=> post.link, :title => bonito(post.title)}
+        %a.tw{:href=> post_url(post.id, post.slug), :title => bonito(post.title)}
           Twitter
       %li
-        %a.fb{:href=> post.link, :title => bonito(post.title)}
+        %a.fb{:href=> post_url(post.id, post.slug), :title => bonito(post.title)}
           Facebook
     %p
       %span.blog

@@ -27,7 +27,7 @@ $(".contenedor").on("mouseenter", 'article', ->
 $(document).on "click", 'a.tw', (e) ->
   e.preventDefault()
   loc = $(this).attr("href")
-  title = escape($(this).attr("title"))
+  title = $(this).attr("title")
   window.open "http://twitter.com/share?url=" + loc + "&text=" + title + "&via=ubuntuf" + "&related=kinduff", "twitterwindow", "height=450, width=550, top=" + ($(window).height() / 2 - 225) + ", left=" + $(window).width() / 2 + ", toolbar=0, location=0, menubar=0, directories=0, scrollbars=0"
 
 $(document).on "click", 'a.fb', (e) ->

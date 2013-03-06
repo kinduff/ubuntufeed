@@ -3,4 +3,5 @@
 %meta{ :content => "http://ubuntufeed.co/logo.png", :property => "og:image"}
 %meta{ :content => @post.description, :property => "og:description"}
 %meta{ :content => @post.description, :name => "description" }
-%meta{ :content => "http://ubuntufeed.co", :property => 'og:url' }
+%meta{ :content => @post.link, :property => 'og:url' }
+- content_for :link, @post.link

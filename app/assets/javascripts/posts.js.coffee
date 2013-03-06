@@ -9,15 +9,15 @@ class Posts
       <a href='#' class='social'>Compartir</a>
       <ul class='share'>
         <li>
-          <a class='copy' href='<%= link %>'>
+          <a class='copy' href='http://"+url+"/post/<%= id %>/<%= slug %>'>
             Copiar URL</a>
         </li>
         <li>
-          <a class='tw' href='<%= link %>' title='<%= title %>'>
+          <a class='tw' href='http://"+url+"/post/<%= id %>/<%= slug %>' title='<%= title %>'>
             Twitter</a>
         </li>
         <li>
-          <a class='fb' href='<%= link %>' title='<%= title %>'>
+          <a class='fb' href='http://"+url+"/post/<%= id %>/<%= slug %>' title='<%= title %>'>
             Facebook</a>
         </li>
       </ul>

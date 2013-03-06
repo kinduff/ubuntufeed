@@ -24,9 +24,7 @@ class PostsController < ApplicationController
     else
       stat.clicks += 1
     end
-    if stat.save
-
-    else
+    unless stat.save
       redirect_to @post.link
     end
   end
