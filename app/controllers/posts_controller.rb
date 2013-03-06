@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  layout 'redirect', :only => [:post]
   def index
     @posts = Post.order('pubdate DESC').page params[:page]
     @number = params[:page]
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def post
-    post = Post.find params[:id]
+    @post = Post.find params[:id]
     stat = Stat.find_or_create_by_post_id(params[:id])
     if stat.clicks.nil?
       stat.clicks = 1
@@ -25,9 +25,9 @@ class PostsController < ApplicationController
       stat.clicks += 1
     end
     if stat.save
-      redirect_to post.link
+
     else
-      redirect_to post.link
+      redirect_to @post.link
     end
   end
 
