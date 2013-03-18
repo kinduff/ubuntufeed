@@ -85,7 +85,7 @@ end
 
 namespace :update do
   desc "Update blogs"
-  task :posts, [:tweet] => :environment do |t, args|
+  task :posts, [:tweet] => :environment do |t, args| ## OINK!
     puts "Working..."
     feeds_urls = []
     posts = []
@@ -101,7 +101,7 @@ namespace :update do
       puts "=========================================="
       puts " "
       feed.entries.each do |entry|
-        if (Post.where(:link => entry.url).count == 0) || (Post.where(:slug => entry.title.parameterize).count == 0)
+        if (Post.where(:link => entry.url).count == 0) && (Post.where(:slug => entry.title.parameterize).count == 0)
           unless entry.title.nil?
             title = entry.title
             link = entry.url
