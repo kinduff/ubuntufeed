@@ -1,3 +1,31 @@
+- unless flash[:encuesta]
+  %aside.form
+    = form_for @encuesta, :url => create_encuesta_path do |f|
+      %a.cerrar{:href => '#'}
+      %h2 ¡Hola, estamos interesados en tu opinión!
+      %p UbuntuFeed es un proyecto que nació hace relativamente poco, estamos buscando opiniones y sugerencias porque estamos interesados en mejorar. Por favor, responde la siguiente encuesta.
+      .tabla
+        .opciones
+          %h3 Califícanos
+          - [10,9,8,7,6,5,4,3,2,1].each do |radio|
+            = f.radio_button :puntuacion, radio
+            = f.label "puntuacion_#{radio}", radio
+            %br
+        .textarea
+          %h3 Nos interesa tu opinión y tus sugerencias, escríbelas a continuación.
+          = f.text_area :comentario
+      %p.nota Nota: Esta encuesta es totalmente anónima. Se agregará una cookie a tu navegador para que esta encuesta no aparezca de nuevo la próxima vez que ingreses al sitio.
+      = f.submit 'Enviar encuesta'
+- else
+  %aside
+    .contenedor
+      %a.cerrar{:href => '#'}
+      %h2 ¡Muchas gracias por tu opinión!
+      %p Pronto anunciaremos los cambios recibidos por ti y por los demás usuarios de UbuntuFeed.
+      %p
+        Recuerda seguirnos en Twitter:
+        %a{:href => "http://twitter.com/ubuntuf", :target => 'blank'}
+          @UbuntuF
 %section
   .contenedor.shadow
     .posts_container
