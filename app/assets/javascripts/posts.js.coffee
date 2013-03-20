@@ -23,7 +23,7 @@ class Posts
       </ul>
       <p>
         <span class='blog'><%= blog.title %></span>
-        <a href='http://"+url+"/post/<%= id %>/<%= slug %>' target='blank' class='link'><%= title %></a>
+        <a href='http://"+url+"/post/<%= id %>/<%= slug %>' target='_blank' class='link'><%= title %></a>
       </p>
     </div>
   </article>")
