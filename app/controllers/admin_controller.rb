@@ -99,4 +99,7 @@ class AdminController < ApplicationController
   def stats
     @stats = Stat.order('clicks DESC')
   end
+  def encuesta
+    @encuestas = Encuesta.order('created_at DESC')
+  end
 end

@@ -396,3 +396,22 @@ ul.share {
     display: none !important;
   }
 }
+.encuesta {
+  position: relative;
+  background: #232323;
+  padding: 3px 0 3px 0;
+  &:nth-last-child(even) {
+    background: #333;
+  }
+  p {
+    color: white;
+    height: 100%;
+    padding: 15px;
+    display: inline-block;
+    width: 700px;
+    &.points {
+      width: 50px !important;
+      color: #EF5A29;
+    }
+  }
+}
