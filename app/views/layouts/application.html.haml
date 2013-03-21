@@ -40,6 +40,12 @@
               UbuntuFeed
         %nav
           %ul
+            %li.donativo
+              %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+                %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}
+                %input{:name => "hosted_button_id", :type => "hidden", :value => "5CJETJ8EFHGXE"}
+                %input{:alt => "PayPal, la forma más segura y rápida de pagar en línea.", :border => "0", :name => "submit", :src => "https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif", :type => "image"}
+                %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/es_XC/i/scr/pixel.gif", :width => "1"}
             %li
               = link_to "", 'http://feeds.feedburner.com/ubuntufeed', :class => 'feed', :target => 'blank'
             %li
