@@ -70,8 +70,8 @@ class AdminController < ApplicationController
                 end
                 pubdate = entry.published
                 blog_id = Blog.find_by_feed_url(feed_url).id
-                # short = short link
-                # tweets << "#{title} #{short}"
+                short = short link
+                tweets << "#{title} #{short}"
                 posts << {
                   :title => title,
                   :link => link,
@@ -107,5 +107,8 @@ class AdminController < ApplicationController
   end
   def encuesta
     @encuestas = Encuesta.order('created_at DESC')
+  end
+  def logs
+    @logs = Log.order('created_at DESC')
   end
 end
