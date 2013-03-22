@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319170659) do
+ActiveRecord::Schema.define(:version => 20130322175220) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20130319170659) do
   create_table "encuesta", :force => true do |t|
     t.integer  "puntuacion"
     t.text     "comentario"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "logs", :force => true do |t|
+    t.integer  "log_type"
+    t.integer  "new_posts"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
