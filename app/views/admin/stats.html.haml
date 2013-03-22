@@ -3,11 +3,12 @@
     %h2 Estadísticas
     %ul
       - @stats.each do |stat|
-        %li
-          = "#{stat.clicks} clicks"
-          |
-          = stat.post.blog.title
-          |
-          = link_to stat.post.title, stat.post.link
+        - unless stat.post.nil?
+          %li
+            = "#{stat.clicks} clicks"
+            |
+            = stat.post.blog.title
+            |
+            = link_to stat.post.title, stat.post.link
     %br
     = link_to "Regresar al administrador", admin_path
