@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   layout 'redirect', :only => [:post]
   def index
-    @encuesta = Encuesta.new
     @posts = Post.order('pubdate DESC').page params[:page]
     @number = params[:page]
     respond_to do |format|
@@ -14,11 +13,11 @@ class PostsController < ApplicationController
   end
 
   def create_encuesta
-    @encuesta = Encuesta.new params[:encuesta]
-    if @encuesta.save
-      flash[:encuesta] = true
-      redirect_to root_path
-    end
+    # @encuesta = Encuesta.new params[:encuesta]
+    # if @encuesta.save
+    #   flash[:encuesta] = true
+    #   redirect_to root_path
+    # end
   end
 
   def feed

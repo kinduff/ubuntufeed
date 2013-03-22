@@ -51,18 +51,17 @@ $(window).scroll ->
       $('a.load').trigger('click')
       counter += 1
 
-$("a.cerrar").on "click", (e) ->
-  e.preventDefault()
-  $('aside.form form, aside .contenedor').animate
-    marginTop: -1000
-  , 500
-  $('aside.form, aside').fadeOut()
+# $("a.cerrar").on "click", (e) ->
+#   e.preventDefault()
+#   $('aside.form form, aside .contenedor').animate
+#     marginTop: -1000
+#   , 500
+#   $('aside.form, aside').fadeOut()
 
-$(document).ready ->
-  unless $.cookie('encuesta') == '1'
-    $('aside.form').delay(500).fadeIn()
-    $('aside.form form').delay(500).animate
-      marginTop: -225
-    , 500
-  $.cookie('encuesta', '1')
-
+# $(document).ready ->
+#   unless $.cookie('encuesta') == '1'
+#     $('aside.form').delay(500).fadeIn()
+#     $('aside.form form').delay(500).animate
+#       marginTop: -225
+#     , 500
+#   $.cookie('encuesta', '1')
