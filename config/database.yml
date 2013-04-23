@@ -1,9 +1,18 @@
 development:
   host: localhost
+<<<<<<< HEAD
   adapter: sqlite3
   encoding: unicode
   database: ubuntufeed_development
   pool: 5
+=======
+  adapter: postgresql
+  encoding: unicode
+  database: ubuntufeed_development
+  pool: 5
+  username: postgres
+  password: 123
+>>>>>>> c60aa34cc93f6d426ebef90a568f6f0f1ee9d8b8
 
 test:
   host: localhost

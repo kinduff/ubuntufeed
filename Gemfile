@@ -28,7 +28,10 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+<<<<<<< HEAD
   gem 'sqlite3'
+=======
+>>>>>>> c60aa34cc93f6d426ebef90a568f6f0f1ee9d8b8
 end
 
 group :development, :test do
