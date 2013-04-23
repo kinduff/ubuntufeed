@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
   layout 'redirect', :only => [:post]
   def index
+<<<<<<< HEAD
+    @posts = Post.includes(:blog).order('pubdate DESC').page params[:page]
+=======
     @posts = Post.order('pubdate DESC').page params[:page]
+>>>>>>> c60aa34cc93f6d426ebef90a568f6f0f1ee9d8b8
     @number = params[:page]
     respond_to do |format|
       format.html # show.html.erb
@@ -42,4 +46,18 @@ class PostsController < ApplicationController
   def populares
     @stats = Stat.order('clicks DESC').limit(50)
   end
+<<<<<<< HEAD
+
+  def busca_post
+    @posts = Post.includes(:blog).where("title like '%#{params[:txtBuscar]}%' or slug like '%#{params[:txtBuscar]}%'").page params[:page ]
+    respond_to do |format|
+      format.html { render "index" }
+      format.json { render :json => @posts.to_json(
+          :methods => [:date,:date_string],
+          :include => { :blog => { :only => :title } }
+      ) }
+    end
+  end
+=======
+>>>>>>> c60aa34cc93f6d426ebef90a568f6f0f1ee9d8b8
 end
