@@ -1,0 +1,9 @@
+%section
+  .contenedor.shadow
+    .posts_container
+      - @encuestas.each do |encuesta|
+        %article.encuesta
+          %p.points
+            =encuesta.puntuacion
+            &#47;10
+          %p=encuesta.comentario

@@ -1,0 +1,11 @@
+-# unless flash[:encuesta]
+  / %aside
+-# else
+  / %aside
+%section
+  .contenedor.shadow
+    .posts_container
+      = render @posts
+    .load_more
+      .loading
+      = link_to "Cargar más", "#load", :class => 'load'

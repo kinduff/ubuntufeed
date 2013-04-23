@@ -1,0 +1,73 @@
+!!!
+%html
+  %head
+    %title
+      - unless yield(:title).empty?
+        = "#{yield(:title)} | UbuntuFeed"
+      - else
+        UbuntuFeed | Noticias de Ubuntu en español
+    %meta{ :charset => "utf-8" }
+    %meta{ :'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    %meta{ :content => 'width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no', :name => 'viewport' }
+    %link{:href => "/iphone.png", :rel => "apple-touch-icon"}
+    %meta{ :content => "Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español.", :name => "description" }
+    %meta{ :content => "UbuntuFeed | Noticias de Ubuntu en español", :property => "og:title"}
+    %meta{ :content => "Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español.", :property => "og:description"}
+    %meta{ :content => "http://ubuntufeed.co/logo.png", :property => "og:image"}
+    %meta{ :content => "http://ubuntufeed.co", :property => 'og:url' }
+    %link{ :href => "favicon.ico", :rel => "shortcut icon"}
+    = auto_discovery_link_tag(:rss, "http://ubuntufeed.co")
+    = stylesheet_link_tag    "application", :media => "all"
+    = csrf_meta_tags
+    :javascript
+      current_page = #{params[:page] || 1 } 
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38641523-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  %body
+    %header
+      .contenedor
+        %h1
+          %a{:href => '/'}
+            %span
+              .logo
+              UbuntuFeed
+        %nav
+          %ul
+            %li.donativo
+              %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+                %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}
+                %input{:name => "hosted_button_id", :type => "hidden", :value => "5CJETJ8EFHGXE"}
+                %input{:name => "submit", :type=>'submit', :value => 'Donar'}
+                %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/es_XC/i/scr/pixel.gif", :width => "1"}
+            %li
+              = link_to "", 'http://feeds.feedburner.com/ubuntufeed', :class => 'feed', :target => 'blank'
+            %li
+              %a{:href=>'#', :class=>'menutrigger'}
+                +
+              .menu
+                %ul
+                  %li
+                    = link_to "Enviar blog", enviar_path
+                  %li
+                    = link_to "Top 50 posts", populares_path
+                  %li
+                    = link_to "Acerca de", about_path
+            %li.paginate
+              -if @posts
+                = paginate @posts
+              -else
+                =link_to "h", root_path
+            %li.buscar
+              %form{:action => "/busca", :method => "post", :target => "_top"}
+                %input{:type => "textbox", :name => "txtBuscar", :id => "txtBuscar", :placeholder => "buscar", :class =>"busqueda"}
+    = yield
+    %footer
+      .contenedor
+    = javascript_include_tag "application"

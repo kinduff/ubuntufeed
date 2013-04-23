@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title Admin | UbuntuFeed
+    %meta{ :charset => "utf-8" }
+    %meta{ :'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    %meta{ :content => 'width=device-width', :name => 'viewport' }
+    %link{:href => "/iphone.png", :rel => "apple-touch-icon"}
+    %link{ :href => "favicon.ico", :rel => "shortcut icon"}
+    = auto_discovery_link_tag(:rss, "http://ubuntufeed.co")
+    = stylesheet_link_tag    "application", :media => "all"
+  %body
+    %header
+      .contenedor
+        .logo
+        %h1
+          =link_to "UbuntuFeed", root_path
+    = yield
+    %aside
+    %footer
+      .contenedor
+    = javascript_include_tag "application"

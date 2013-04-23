@@ -1,0 +1,8 @@
+- title "Enviar blog"
+.contenedor
+  #enviar
+    %h2 Enviar blog a UbuntuFeed
+    - if flash[:notice]
+      %p Tu blog se ha recibido con éxito. Pronto será añadido al feed.
+    - else
+      = render 'form', :blog => @blog

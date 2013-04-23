@@ -1,0 +1,43 @@
+.contenedor
+  #admin
+    .update
+      =link_to "Estadísticas", admin_stats_path
+      =link_to "Agregar blog", admin_new_path
+      =link_to "Actualizar blogs", actualizar_path('0')
+      =link_to "Actualizar blogs con tweet", actualizar_path('1')
+      =link_to "Ver entradas pendientes", actualizar_path('2')
+      =link_to "Encuesta", admin_encuesta_path
+      =link_to "Logs", admin_logs_path
+    - if flash[:info]
+      %p.notice
+        ¡Proceso terminado!
+        %br
+        =flash[:info]
+    %ul.blogs_list
+      - @blogs.each do |blog|
+        - if blog.visible == true
+          %li{:style => 'background: green;'}
+            %p.accion
+              =link_to "Editar", admin_edit_path(blog.id)
+              =link_to "Ocultar", ocultar_path(blog.id)
+            %p.title
+              =blog.title
+            %p
+              URL:
+              =blog.url
+            %p
+              =blog.feed_url
+        - else
+          %li{:style => 'background: red;'}
+            %p.accion
+              =link_to "Editar", admin_edit_path(blog.id)
+              =link_to "Eliminar", eliminar_path(blog.id)
+              =link_to "Mostrar", mostrar_path(blog.id)
+            %p.title
+              =blog.title
+            %p
+              URL:
+              =blog.url
+            %p
+              Feed:
+              =blog.feed_url

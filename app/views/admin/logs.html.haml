@@ -1,0 +1,18 @@
+.contenedor
+  #enviar
+    %h2 Logs
+    %ul
+      - @logs.each do |log|
+        %li
+          - if log.log_type == 1
+            Rake
+          - elsif log.log_type == 2
+            Web
+          |
+          = log.new_posts
+          posts ingresados
+          |
+          = I18n.localize(Time.at(log.created_at), :format => '%H:%M:%S | %d/%m/%Y' )
+            
+    %br
+    = link_to "Regresar al administrador", admin_path

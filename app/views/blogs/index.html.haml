@@ -1,0 +1,31 @@
+- title "Acerca de"
+.contenedor
+  #about
+    %h1 Acerca de
+    %p Centralizador de feeds de los blogs mas famosos sobre Ubuntu y Linux en español.
+    %p Surge a partir de la necesidad de juntar y ordenar feeds de blogs relacionados a Ubuntu y Linux para el fácil acceso a noticias.
+    %p
+      Proyecto realizado por
+      %a{:href => "http://twitter.com/kinduff", :target => 'blank'} @kinduff
+      en Ruby on Rails; código de fuente disponible en
+      %a{:href => "http://github.com/kinduff/ubuntufeed", :target => 'blank'} Github
+    %h2 Colaboradores
+    %ul
+      %li
+        =link_to "Abimael Martell", "https://twitter.com/abimaelmartell"
+    %h2 Listado de feeds
+    %ul
+      = render @blogs
+    %p
+      ¿Tienes algún blog que no aparece en esta lista?
+      =link_to 'Envía un blog', enviar_path
+    %h2 Licencia
+    %p
+      UbuntuFeed por Alejandro AR (
+      %a{:href => "http://twitter.com/kinduff"}> @kinduff
+      )
+    %p
+      %img{:alt => "Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported", :src => "http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"}
+    %p
+      Este obra está bajo una
+      %a{:href => "http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es"} Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported

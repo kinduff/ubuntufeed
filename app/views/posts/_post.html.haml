@@ -1,0 +1,19 @@
+%article
+  .contenedor
+    %p.fecha{:data => { :date => post.date_string } }
+      = post.date
+    = link_to 'Compartir', '#', :class => 'social'
+    %ul.share
+      %li
+        %a.copy{:href=> post_url(post.id, post.slug)}
+          Copiar URL
+      %li
+        %a.tw{:href=> post_url(post.id, post.slug), :title => bonito(post.title)}
+          Twitter
+      %li
+        %a.fb{:href=> post_url(post.id, post.slug), :title => bonito(post.title)}
+          Facebook
+    %p
+      %span.blog
+        = post.blog.title
+      = link_to post.title, post_path(post.id, post.slug), :target => '_blank', :class => 'link'

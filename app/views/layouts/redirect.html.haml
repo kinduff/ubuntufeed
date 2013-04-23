@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title Redirigiendo... | UbuntuFeed
+    %meta{ :charset => "utf-8" }
+    = yield
+  %body
+    <p>Redirigiendo...</p>
+    =link_to "Clic aquí para acceder directamente", yield(:link)
