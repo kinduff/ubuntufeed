@@ -64,6 +64,9 @@
                 = paginate @posts
               -else
                 =link_to "h", root_path
+            %li.buscar
+              %form{:action => "/busca", :method => "post", :target => "_top"}
+                %input{:type => "textbox", :name => "txtBuscar", :id => "txtBuscar", :placeholder => "buscar", :class =>"busqueda"}
     = yield
     %footer
       .contenedor

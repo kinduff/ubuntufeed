@@ -28,4 +28,6 @@ Ubuntufeed::Application.routes.draw do
   post '/encuesta', :to => 'posts#create_encuesta', :as => 'create_encuesta'
 
   match '*path' => redirect('/') unless Rails.env.development?
+
+  match '/busca' => 'posts#busca_post'
 end

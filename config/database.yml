@@ -1,6 +1,6 @@
 development:
   host: localhost
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   database: ubuntufeed_development
   pool: 5
