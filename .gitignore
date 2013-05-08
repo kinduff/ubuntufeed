@@ -19,3 +19,7 @@
 
 # Vim temporal viles
 *.swp
+
+#Ignore my local files changes
+/config/database.yml
+Gemfile
