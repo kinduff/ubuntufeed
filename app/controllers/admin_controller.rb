@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   include AdminHelper
-  http_basic_authenticate_with :name => "123", :password => "123"
+  http_basic_authenticate_with :name => ENV['U'], :password => ENV['U']
   def index
     @blogs = Blog.order('title ASC').all
   end
