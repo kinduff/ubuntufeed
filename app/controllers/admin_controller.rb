@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   include AdminHelper
-  http_basic_authenticate_with :name => ENV['U'], :password => ENV['P']
+  http_basic_authenticate_with :name => "123", :password => "123"
   def index
     @blogs = Blog.order('title ASC').all
   end
@@ -32,7 +32,7 @@ class AdminController < ApplicationController
     @blog.visible = true
     if @blog.save
       flash[:notice] = true
-      redirect_to :new_admin
+      redirect_to admin_new_path
     else
       render :new
     end
@@ -44,7 +44,7 @@ class AdminController < ApplicationController
     @blog = Blog.find params[:id]
     if @blog.update_attributes params[:blog]
       flash[:notice] = true
-      redirect_to :admin_edit
+      redirect_to admin_edit_path
     else
       render :edit
     end
@@ -71,7 +71,7 @@ class AdminController < ApplicationController
                   end
                   pubdate = entry.published
                   blog_id = Blog.find_by_feed_url(feed_url).id
-                  tweets << "#{title} #{short}"
+                  tweets << "#{title} #{link}"
                   posts << {
                     :title => title,
                     :link => link,
