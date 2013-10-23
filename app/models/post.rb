@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
   end
 
   def date
-    date = I18n.localize(Time.at(self.pubdate), :format => '%A, %d de %B de %Y' )
+    date = I18n.localize(Time.at(self.pubdate.to_time), :format => '%A, %d de %B de %Y' )
     today = I18n.localize(Time.at(Time.now), :format => '%A, %d de %B de %Y' )
     if date == today
       return "Entradas del día de hoy"
@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
   end
 
   def date_string
-    "#{Time.at(self.pubdate).day}#{Time.at(self.pubdate).month}#{Time.at(self.pubdate).year}"
+    "#{Time.at(self.pubdate.to_time).day}#{Time.at(self.pubdate.to_time).month}#{Time.at(self.pubdate.to_time).year}"
   end
 
 end
