@@ -140,7 +140,7 @@ GEM
       mini_portile (~> 0.5.0)
     nyan-cat-formatter (0.5.1)
       rspec (>= 2.13)
-    oauth (0.4.7)
+    oauth (0.5.5)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
